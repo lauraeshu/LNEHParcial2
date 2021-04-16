@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <script src="JS/jquery-1.10.2.js" type="text/javascript"></script>
+        <script>
+	$(document).ready(function() {
+		
+                $('#buttonClickMe').click(function(event) {
+			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
+			$.post('ArchivoPreguntas', {
+                                
+			}, function(responseText) {
+				$('#tabla').html(responseText);
+			});
+		});
+                $('#buttonClickMe2').click(function(event) {
+			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
+			$.post('ActionServlet', {
+                                
+			}, function(responseText) {
+				$('#tabla1').html(responseText);
+			});
+		});
+	});
+                
+</script>
+    </head>
+    <body>
+        
+        
+        <h2>Leer Archivo JSON</h2>
+	<form id="form1">
+           
+            <div id="tabla"></div>
+            <br>
+             <br>
+            <div id="tabla1"></div>
+        
+		
+            <br><!-- comment -->
+            <input type="button" id="buttonClickMe" value="Leer Preguntas"  />
+            <input type="button" id="buttonClickMe2" value="Respuestas"  />
+            <br>
+       
+	</form>
+        <br>
+	
+        
+    </body>
+</html>
